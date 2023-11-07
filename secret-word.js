@@ -1,30 +1,26 @@
-import fs from 'node:fs'
-import { Word } from "./word.js";
+import { LoadSecretWord } from "./loadsecretword.js";
 
 export default class SecretWord{
-  secretWord
-  slumpatIndex
-  slumpatOrd
 
-  secretWord = fs.readFileSync('words.csv', 'utf8')
-  .trim()
-  .split('\n')
-  .map(w => new Word());
+  constructor() {
+    this.secretWord = LoadSecretWord
+    this.slumpatOrd = this.processWord()
 
-  slumpatIndex = Math.floor(Math.random() * this.secretWord.length);
-  slumpatOrd = this.secretWord[slumpatIndex];
+  }
 
+  
+  slumpatOrd() {
+    slumpatIndex = Math.floor(Math.random() * this.secretWord.length);
+    slumpatOrd = this.secretWord[slumpatIndex];
+    return this.slumpatOrd
+}
 
   get length() {
     return this.slumpatOrd.length
   }
 
   get asString() {
-    return this.slumpatOrd.join(' ')
-  }
-
-  constructor(word) {
-    this.slumpatOrd = this.processWord(word)
+    return this.slumpatOrd.join('')
   }
 
   processWord(word) {

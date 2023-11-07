@@ -12,8 +12,7 @@ export default class Game{
   done
   constructor() {
     this.gallows = new Gallows()
-    let question = new Question()
-    this.secretWord = new SecretWord(question.answer)
+    this.secretWord = new SecretWord()
     this.foundWord = new FoundWord(this.secretWord)
     this.done = false
   }
