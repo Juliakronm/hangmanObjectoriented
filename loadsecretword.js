@@ -6,7 +6,12 @@ export class LoadSecretWord {
     this.wordsData = fs.readFileSync('words.csv', 'utf8')
       .trim()
       .split('\n')
+      .map(w => new Word(w))
+  }
 
-    return wordsData.map(w => new Word(w))
+  display() {
+    for (const word of this.wordsData) {
+      console.log(word)
+    }
   }
 }
