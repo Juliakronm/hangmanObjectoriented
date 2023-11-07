@@ -12,7 +12,7 @@ export default class Game{
   done
   constructor() {
     this.gallows = new Gallows()
-    let question = new Question('Type the secret word, do not show your opponent')
+    let question = new Question()
     this.secretWord = new SecretWord(question.answer)
     this.foundWord = new FoundWord(this.secretWord)
     this.done = false
@@ -26,13 +26,9 @@ export default class Game{
   }
   
   runRound() {
-    //10. ask for secret word                             bass
 
     print('The secret word has ' + this.secretWord.length + ' letters')
-    //process secret word intro chars'                b a s s
-    //store found word as empty positions for chars   _ _ _ _
     print(this.foundWord.asString)
-    //20. ask for letter ?               
     this.guessWord()
   }
     
@@ -41,17 +37,12 @@ export default class Game{
     print('you guessed ' + letter)
       
     if (this.secretWord.isLetterInSecretWord(letter)) {
-      //  (b) found                  store b in used chars b _ _ _
-      //  (s) found                  store s in used chars b _ s s
       let positions = this.secretWord.getLetterPositions(letter)
       this.foundWord.applyFoundLetter(letter, positions)
       print('you found \n' + this.foundWord.asString)
-      //check if word i compleye ( no empty slots)?  exit to win round
       this.checkWin()
     } else {
-      //  (x)  not found             store x in used chars, add part to gallows
       print(this.gallows.step())
-      //check if gallows is done? exit to looose round
       this.checkLoose()
 
     }    
