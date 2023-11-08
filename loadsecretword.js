@@ -1,7 +1,7 @@
 import fs from 'node:fs'
 import { Word } from "./word.js";
 
-export class LoadSecretWord {
+export class LoadWordList {
   constructor() {
     this.wordsData = fs.readFileSync('words.csv', 'utf8')
       .trim()

@@ -1,9 +1,9 @@
-import { LoadSecretWord } from "./loadsecretword.js";
+import { LoadWordList } from "./loadsecretword.js";
 
 export default class SecretWord{
 
   constructor() {
-    this.secretWord = LoadSecretWord
+    this.secretWord = LoadWordList
     this.slumpatOrd = this.processWord()
 
   }
