@@ -7,11 +7,12 @@ export class LoadWordList {
       .trim()
       .split('\n')
       .map(w => new Word(w))
+
   }
 
-  display() {
-    for (const word of this.wordsData) {
-      console.log(word)
-    }
-  }
+  // display() {
+  //   for (const word of this.wordsData) {
+  //     console.log(word)
+  //   }
+  // }
 }

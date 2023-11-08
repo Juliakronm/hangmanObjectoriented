@@ -1,18 +1,22 @@
 import { LoadWordList } from "./loadsecretword.js";
 
 export default class SecretWord{
+  multipleWords
+  chooseWord
+  processingWord
+
 
   constructor() {
-    this.secretWord = LoadWordList
-    this.slumpatOrd = this.processWord()
+    this.multipleWords = new LoadWordList
+    this.chooseWord = this.randomWord(this.multipleWords)
+    this.processingWord = this.processWord(this.chooseWord)
 
   }
 
-  
-  slumpatOrd() {
-    slumpatIndex = Math.floor(Math.random() * this.secretWord.length);
-    slumpatOrd = this.secretWord[slumpatIndex];
-    return this.slumpatOrd
+  randomWord(wordList) {
+    let randomIndex = Math.floor(Math.random() * wordList.length);
+    getAWordOrd = this.wordList[randomIndex];
+    return this.getAWordOrd
 }
 
   get length() {
