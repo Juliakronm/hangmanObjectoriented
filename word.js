@@ -1,11 +1,19 @@
 export class Word{
   Word
 
+  list = []
   constructor(word) {
-    this.word = word
+    this.list = list.push(word)
   }
 
   asCSV() {
-    return this.word
+    return this.list
   }
 }
+
+
+
+
+// constructor(word) {
+//   this.word = word
+// }

@@ -3,7 +3,7 @@ import { Word } from "./word.js";
 
 export class LoadWordList {
   constructor() {
-    this.wordsData = fs.readFileSync('words.csv', 'utf8')
+    this.wordsData = fs.readFileSync('./words.csv', 'utf8')
       .trim()
       .split('\n')
       .map(w => new Word(w))

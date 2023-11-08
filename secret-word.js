@@ -5,16 +5,14 @@ export default class SecretWord{
   chooseWord
   processingWord
 
-
   constructor() {
     this.multipleWords = new LoadWordList
     this.chooseWord = this.randomWord(this.multipleWords)
     this.processingWord = this.processWord(this.chooseWord)
-
   }
 
   randomWord(wordList) {
-    let randomIndex = Math.floor(Math.random() * wordList.length);
+    let randomIndex = Math.floor(Math.random() * wordList.length) +1;
     getAWord = this.wordList[randomIndex];
     return this.getAWord
 }
