@@ -1,14 +1,16 @@
+import fs from 'node:fs'
+
 export class Word{
-  Word
+  word
 
   list = []
-  constructor(word) {
-    this.list = list.push(word)
+  constructor() {
+    this.list = this.list.push(fs.readFileSync('./words.csv', 'utf8').trim().split('\n'))
+    console.log(list)
   }
-
-  asCSV() {
-    return this.list
-  }
+  // asCSV() {
+  //   return list
+  // }
 }
 
 
@@ -17,3 +19,4 @@ export class Word{
 // constructor(word) {
 //   this.word = word
 // }
+

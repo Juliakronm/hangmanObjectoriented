@@ -13,8 +13,8 @@ export default class SecretWord{
 
   randomWord(wordList) {
     let randomIndex = Math.floor(Math.random() * wordList.length) +1;
-    getAWord = this.multipleWords[randomIndex];
-    return this.getAWord
+    let getAWord = this.multipleWords[randomIndex];
+    return getAWord
 }
 
   get length() {
