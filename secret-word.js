@@ -15,8 +15,8 @@ export default class SecretWord{
 
   randomWord(wordList) {
     let randomIndex = Math.floor(Math.random() * wordList.length);
-    getAWordOrd = this.wordList[randomIndex];
-    return this.getAWordOrd
+    getAWord = this.wordList[randomIndex];
+    return this.getAWord
 }
 
   get length() {
