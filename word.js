@@ -6,7 +6,7 @@ export class Word{
   list = []
   constructor() {
     this.list = this.list.push(fs.readFileSync('./words.csv', 'utf8').trim().split('\n'))
-    console.log(list)
+    return this.list
   }
   // asCSV() {
   //   return list
