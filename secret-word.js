@@ -6,23 +6,24 @@ export default class SecretWord{
   processingWord
 
   constructor() {
-    this.multipleWords = new LoadWordList
-    this.chooseWord = this.randomWord(this.multipleWords)
+    this.multipleWords = new LoadWordList()
+    this.chooseWord = this.randomWord(this.multipleWords.wordsData.list).trim()
     this.processingWord = this.processWord(this.chooseWord)
+
   }
 
   randomWord(wordList) {
-    let randomIndex = Math.floor(Math.random() * wordList.length) +1;
-    let getAWord = this.multipleWords[randomIndex];
+    let randomIndex = Math.floor(Math.random() * wordList.length);
+    let getAWord = wordList[randomIndex];
     return getAWord
 }
 
   get length() {
-    return this.slumpatOrd.length
+    return this.processingWord.length
   }
 
   get asString() {
-    return this.slumpatOrd.join('')
+    return this.processingWord.join('')
   }
 
   processWord(word) {
@@ -30,13 +31,13 @@ export default class SecretWord{
   }
 
   isLetterInSecretWord(letter) {
-    return this.slumpatOrd.includes(letter)
+    return this.processingWord.includes(letter)
   }
 
   getLetterPositions(letter) {
     let positions = []
-    for (let i = 0; i < this.slumpatOrd.length; i++) {
-      if (this.slumpatOrd[i] == letter) {
+    for (let i = 0; i < this.processingWord.length; i++) {
+      if (this.processingWord[i] == letter) {
         positions.push(i)
 
       }
